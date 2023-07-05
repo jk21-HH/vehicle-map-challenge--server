@@ -10,11 +10,10 @@ app.use(cors());
 
 const serverURL = process.env.PORT || 5000;
 
-console.log(serverURL);
+const route = require("./routes/routes");
 
-const vehiclesRoute = require("./routes/Vehicles");
-app.use("/vehicles", vehiclesRoute); // reroute to vehicles
+app.use("/vehicles", route); // reroute to vehicles API
 
 app.listen(serverURL, function () {
-  console.log("we are up and running");
+  console.log(`we are up and running on server: ${serverURL}`);
 });
